@@ -1,0 +1,145 @@
+/* < Tablet */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: 65px;
+        --nav-height: 0px;
+    }
+
+    .hide-on-mobie-tablet {
+        display: none;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .header__cart {
+        width: 90px;
+        text-align: right;
+    }
+
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        /* padding: 0 calc((100% - 654px) / 2); */
+    }
+
+    .header__cart-list::before {
+        display: none;
+    }
+
+    .container {
+        margin-top: calc(var(--header-height) + var(--sort-bar-height));
+    }
+
+    .sort-bar {
+        display: flex;
+    }
+
+    .container__content {
+        padding-top: 8px;
+    }
+
+    .mobile-category {
+        display: block;
+    }
+
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .cart__product-header {
+        padding: 12px;
+        margin: 0 calc((100% - 654px) / 2);
+    }
+
+    .cart__product-item li {
+        margin: 0 calc((100% - 654px) / 2);
+    }
+
+    .cart__product-view-cart {
+        margin: 0 calc((100% - 654px) / 2 + 10px);
+    }
+}
+
+/* Mobie */
+@media (max-width: 739px) {
+    .hide-on-mobie {
+        display: none;
+    }
+
+    .header__search {
+        justify-content: space-between;
+    }
+
+    .mobile-search {
+        display: block;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .header__logo,
+    .header__cart {
+        width: unset;
+    }
+
+    .search {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;height: var(--sort-bar-height);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+        z-index: 1;
+        animation: mobileSearchSideIn linear 0.2s;
+    }
+
+    .home-product__content {
+        margin: 0;
+    }
+
+    .pagination__item  {
+        margin: 0 2px;
+    }
+
+    .pagination__item-link {
+        height: 26px;
+        min-width: 28px;
+        line-height: 26px;
+        font-size: 1.4rem;
+    }
+
+    @keyframes mobileSearchSideIn {
+        from {
+            opacity: 0;
+            top: calc(var(--header-height)/2);
+        }
+        to {
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+
+    .mobile-search--checked:checked ~ .search {
+        display: flex;
+    }
+
+    .footer__content {
+        padding: 0 16px;
+    }
+}
